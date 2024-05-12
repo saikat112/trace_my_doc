@@ -9,7 +9,7 @@
 // }
 'use client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
+import Home from '../pages/Home/login';
 
 export default function page() {
   return (

@@ -14,10 +14,8 @@ module.exports = {
         "primary" : "#0B0C10",
         "secondry" : "#FFFFFF",
         "tertiary" : "#C5C6C7",
-        "Quaternary" : "#66FCF1",
-        "Quinary" : "#45A29E"
-
-
+        "quaternary" : "#66FCF1",
+        "quinary" : "#45A29E"
       }
     },
   },
