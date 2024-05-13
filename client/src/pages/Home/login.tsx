@@ -58,14 +58,14 @@ export default function login() {
                   />
                   <div onClick={togglePasswordVisibility}>
                     {showPassword ? (
-                      <FaEye className="text-gray-400 hover:cursor-pointer	 m-2" />
+                      <FaEye className="text-gray-400 hover:cursor-pointer	 m-1" />
                     ) : (
-                      <FaEyeSlash className="text-gray-400 hover:cursor-pointer m-2" />
+                      <FaEyeSlash className="text-gray-400 hover:cursor-pointer m-1" />
                     )}
                   </div>
                 </div>
                 <div className="flex justify-between w-64 md-5">
-                  <label className="flex item-center text-xs">
+                  <label className="flex item-center text-xs ">
                     <input className="mr-1" type="checkbox" name="remember" />
                     remember me
                   </label>
@@ -75,7 +75,7 @@ export default function login() {
                 </div>
                 <a
                   href="#"
-                  className="border-2 border-quinary text-quinary rounded-full px-12 py-2 inline-block font-semibold hover:bg-quinary hover:text-white "
+                  className="border-2 border-quinary text-quinary rounded-full px-12 py-2 inline-block font-semibold hover:bg-quinary hover:text-white mt-5"
                 >
                   Sign In
                 </a>
