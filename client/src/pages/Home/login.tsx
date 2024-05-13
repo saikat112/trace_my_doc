@@ -58,9 +58,9 @@ export default function login() {
                   />
                   <div onClick={togglePasswordVisibility}>
                     {showPassword ? (
-                      <FaEye className="text-gray-400 m-2" />
+                      <FaEye className="text-gray-400 hover:cursor-pointer	 m-2" />
                     ) : (
-                      <FaEyeSlash className="text-gray-400 m-2" />
+                      <FaEyeSlash className="text-gray-400 hover:cursor-pointer m-2" />
                     )}
                   </div>
                 </div>
@@ -69,9 +69,16 @@ export default function login() {
                     <input className="mr-1" type="checkbox" name="remember" />
                     remember me
                   </label>
-                  <a href="#" className="text-xs">Forgot Password</a>
+                  <a href="#" className="text-xs ">
+                    Forgot Password
+                  </a>
                 </div>
-
+                <a
+                  href="#"
+                  className="border-2 border-quinary text-quinary rounded-full px-12 py-2 inline-block font-semibold hover:bg-quinary hover:text-white "
+                >
+                  Sign In
+                </a>
               </div>
             </div>
           </div>
