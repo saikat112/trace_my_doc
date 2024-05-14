@@ -1,40 +1,49 @@
 import React, { useEffect, useState } from "react";
-import { motion, useAnimationControls} from "framer-motion"
+import { motion, useAnimationControls } from "framer-motion";
+import { Link } from "react-router-dom";
 
-
-const containerVariants ={
-    close:{
-        width: "5rem",
-        transition:{
-            type : 'spring',
-            damping: 15,
-            duration: 0.5,
-        },
+const containerVariants = {
+  close: {
+    width: "5rem",
+    transition: {
+      type: 'spring',
+      damping: 15,
+      duration: 0.5,
     },
-    open:{
-        width: "16rem",
-        transition:{
-            type : 'spring',
-            damping: 15,
-            duration: 0.5,
-        },
-    }
-}
+  },
+  open: {
+    width: "16rem",
+    transition: {
+      type: 'spring',
+      damping: 15,
+      duration: 0.5,
+    },
+  },
+};
+
 export default function Navigation() {
-    const [isOpen , setIsOpen ] = useState(false)
-    const containerControls = useAnimationControls()
-    useEffect (() => {
-        if(isOpen){
-            containerControls.start("open")
-        } else{
-            containerControls.start("close")
-        }
-    }, [isOpen])
-    const handleOpenClose = () => {
-        setIsOpen(!isOpen)
+  const [isOpen, setIsOpen] = useState(false);
+  const containerControls = useAnimationControls();
+
+  useEffect(() => {
+    if (isOpen) {
+      containerControls.start("open");
+    } else {
+      containerControls.start("close");
     }
+  }, [isOpen]);
+
+  const handleOpenClose = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <motion.nav variants={containerVariants}  animation={containerControls} initial ="close" className="bg-neutral-900 flex flex-col z-10 gap-20 p-5 absolute top-0 left-0 h-full shadow-neutral-600">
+    <motion.nav
+      variants={containerVariants}
+      animate={containerControls}
+      initial="close"
+      className="bg-neutral-900 flex flex-col z-10 gap-20 p-5 absolute top-0 left-0 h-full shadow-neutral-600"
+    >
       <div className="flex flex-row w-full justify-between place-items-center">
         <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-amber-700 rounded-full" />
         <button className="p-1 rounded-full flex" onClick={() => handleOpenClose()}>
@@ -53,6 +62,11 @@ export default function Navigation() {
             />
           </svg>
         </button>
+      </div>
+      <div className="flex flex-col gap-4">
+        <Link to="/" className="text-neutral-200">Home</Link>
+        <Link to="/login" className="text-neutral-200">Login</Link>
+        {/* Add more links as needed */}
       </div>
     </motion.nav>
   );

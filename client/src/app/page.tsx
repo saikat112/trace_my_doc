@@ -7,19 +7,32 @@
 //     </main>
 //   );
 // }
-'use client'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+"use client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 import Home from '../pages/Home/index';
-import Navigation from '@/components/Navigation';
+import Login from '../pages/Home/login';
+import Navigation from "@/components/Navigation";
 
 export default function page() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  if (!isClient) {
+    return null;
+  }
   return (
     <BrowserRouter>
-    <Navigation/>
+      <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
-
